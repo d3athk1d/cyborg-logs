@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYSTEM_LOGS // CYBORG_TRAP</title>
+    <style>
+        /* TERMINAL THEME: MONOCHROME GREEN */
+        body { 
+            background-color: #000; color: #00ff41; 
+            font-family: 'Courier New', Courier, monospace; 
+            margin: 0; padding: 40px; line-height: 1.6;
+        }
+
+        .terminal-window {
+            max-width: 800px; margin: 0 auto;
+            border: 1px solid #00ff41; padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
+        }
+
+        .log-entry { margin-bottom: 40px; border-left: 2px solid #00ff41; padding-left: 20px; }
+        .timestamp { color: #fff; background: #004400; padding: 2px 8px; font-size: 0.8rem; }
+        h2 { font-size: 1.2rem; text-transform: uppercase; margin: 10px 0; }
+        p { color: #00ff41; opacity: 0.8; font-size: 0.9rem; }
+
+        /* BACK TO HOME LINK */
+        .nav-link { color: #fff; text-decoration: none; border: 1px solid #fff; padding: 5px 10px; font-size: 0.7rem; transition: 0.3s; }
+        .nav-link:hover { background: #fff; color: #000; }
+
+        .cursor { display: inline-block; width: 10px; height: 18px; background: #00ff41; animation: blink 1s infinite; vertical-align: middle; }
+        @keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
+    </style>
+</head>
+<body>
+
+    <div class="terminal-window">
+        <div style="margin-bottom: 30px;">
+            <a href="index.html" class="nav-link">< RETURN_TO_BASE</a>
+        </div>
+
+        <h1>ROOT@CYBORG_TRAP:~# ACCESSING_LOGS...<span class="cursor"></span></h1>
+        <hr style="border: 0; border-top: 1px solid #00ff41; margin: 20px 0;">
+
+        <div class="log-entry">
+            <span class="timestamp">2026-03-27 // 17:45</span>
+            <h2>Project: Portfolio Expansion</h2>
+            <p>> Successfully deployed Luxury Noir and Cyborg Trap interfaces.<br>
+               > Integrated Formspree API for member acquisition.<br>
+               > Status: ALL SYSTEMS OPERATIONAL.</p>
+        </div>
+
+        <div class="log-entry">
+            <span class="timestamp">2026-03-20 // 09:12</span>
+            <h2>Project: Galactic Currency</h2>
+            <p>> Initialized repository on GitHub.<br>
+               > Optimized CSS for deep-space black aesthetics.<br>
+               > Locked in ONE-STOP rights for "GHOST" and "MAMA".</p>
+        </div>
+
+        <div style="text-align: center; color: #004400; font-size: 0.7rem; margin-top: 50px;">
+            -- END OF ENCRYPTED DATA --
+        </div>
+    </div>
+
+</body>
+</html>
