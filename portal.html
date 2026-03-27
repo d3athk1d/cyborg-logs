@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AETHELGARD // ELITE_PORTAL</title>
+    <style>
+        body { background-color: #050505; color: #00ff88; font-family: 'Courier New', monospace; margin: 0; padding: 20px; overflow-x: hidden; }
+        .container { border: 1px solid #1a1a1a; padding: 45px; max-width: 1000px; margin: 20px auto; background: #080808; box-shadow: 0 0 60px rgba(0, 255, 136, 0.05); position: relative; }
+        
+        /* TOP NAVIGATION FOR THE 3-PAGE SYSTEM */
+        .system-nav { display: flex; gap: 10px; margin-bottom: 30px; border-bottom: 1px solid #222; padding-bottom: 15px; }
+        .nav-btn { text-decoration: none; color: #444; font-size: 0.65rem; border: 1px solid #222; padding: 5px 12px; transition: 0.3s; letter-spacing: 2px; }
+        .nav-btn:hover, .nav-active { color: #00ff88; border-color: #00ff88; background: rgba(0,255,136,0.05); }
+
+        h1 { font-size: 2.5rem; letter-spacing: 12px; text-transform: uppercase; text-align: center; color: #fff; margin: 40px 0 10px 0; }
+        .sub-header { color: #555; letter-spacing: 5px; text-align: center; font-size: 0.7rem; margin-bottom: 50px; }
+
+        /* GRID SYSTEM FOR ASSETS */
+        .asset-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 40px; }
+        .asset-card { border: 1px solid #222; padding: 25px; background: #000; position: relative; transition: 0.3s; }
+        .asset-card:hover { border-color: #00ff88; box-shadow: 0 0 20px rgba(0, 255, 136, 0.1); }
+        .asset-label { font-size: 0.6rem; color: #333; text-transform: uppercase; letter-spacing: 2px; }
+        .asset-value { font-size: 1.1rem; color: #fff; margin: 10px 0; font-weight: bold; }
+        .status-dot { height: 6px; width: 6px; background: #00ff88; border-radius: 50%; display: inline-block; margin-right: 8px; box-shadow: 0 0 5px #00ff88; }
+
+        /* LIVE FEED SECTION */
+        .live-feed { margin-top: 50px; background: #0a0a0a; border: 1px solid #1a1a1a; padding: 20px; font-size: 0.7rem; color: #666; height: 150px; overflow-y: hidden; }
+        .feed-line { margin-bottom: 5px; }
+        .feed-time { color: #00ff88; margin-right: 10px; }
+
+        .footer { margin-top: 60px; font-size: 0.6rem; color: #1a1a1a; text-align: center; letter-spacing: 5px; border-top: 1px solid #111; padding-top: 30px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="system-nav">
+            <a href="index.html" class="nav-btn">01_HUB</a>
+            <a href="log.html" class="nav-btn">02_BLUEPRINT</a>
+            <a href="portal.html" class="nav-btn nav-active">03_ELITE_PORTAL</a>
+            <a href="bio.html" class="nav-btn">04_PERSONNEL</a>
+        </div>
+
+        <h1>ELITE_PORTAL</h1>
+        <div class="sub-header">DECSEC SYSTEM ADMINISTRATION // LEVEL 5 ACCESS</div>
+
+        <div class="asset-grid">
+            <div class="asset-card">
+                <span class="asset-label">MASTER_RECORDINGS</span>
+                <div class="asset-value">GHOST_V2.WAV</div>
+                <div style="font-size: 0.65rem; color: #00ff88;"><span class="status-dot"></span> ENCRYPTED_SYNC_READY</div>
+            </div>
+            <div class="asset-card">
+                <span class="asset-label">SATELLITE_UPLINK</span>
+                <div class="asset-value">NODE_ALPHA_09</div>
+                <div style="font-size: 0.65rem; color: #00ff88;"><span class="status-dot"></span> CONNECTION_STABLE</div>
+            </div>
+            <div class="asset-card">
+                <span class="asset-label">DISTRIBUTION_REVENUE</span>
+                <div class="asset-value">100%_OWNERSHIP</div>
+                <div style="font-size: 0.65rem; color: #00ff88;"><span class="status-dot"></span> NO_INTERMEDIARIES</div>
+            </div>
+        </div>
+
+        <div class="live-feed">
+            <div class="feed-line"><span class="feed-time">[19:40:01]</span> INITIALIZING_ELITE_PORTAL_V5.2...</div>
+            <div class="feed-line"><span class="feed-time">[19:40:05]</span> SCANNED_SATELLITE_NODES: 04_ACTIVE</div>
+            <div class="feed-line"><span class="feed-time">[19:40:12]</span> VERIFYING_MASTER_LICENSES... SUCCESS</div>
+            <div class="feed-line"><span class="feed-time">[19:40:20]</span> BYPASSING_CORPORATE_FIREWALLS... COMPLETE</div>
+            <div class="feed-line"><span class="feed-time">[19:40:45]</span> DECSEC_IDENTITY_CONFIRMED. WELCOME, OCK.</div>
+        </div>
+
+        <div class="footer">
+            AETHELGARD // PRIVATE CLOUD INFRASTRUCTURE // BYPASS_COMPLETE
+        </div>
+    </div>
+
+</body>
+</html>
