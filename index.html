@@ -5,17 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AETHELGARD // ELITE PORTAL</title>
     <style>
-        /* THEME: DEEP OBSIDIAN & NEON EMERALD */
-        body { background-color: #050505; color: #00ff88; font-family: 'Courier New', monospace; margin: 0; padding: 20px; }
-        .container { border: 1px solid #1a1a1a; padding: 40px; max-width: 900px; margin: 40px auto; border-radius: 4px; background: rgba(10, 10, 10, 0.98); box-shadow: 0 0 50px rgba(0, 255, 136, 0.05); }
+        body { background-color: #050505; color: #00ff88; font-family: 'Courier New', monospace; margin: 0; padding: 20px; overflow-x: hidden; }
         
-        .status-bar { background: #111; padding: 12px; font-size: 0.75rem; margin-bottom: 40px; border-left: 4px solid #00ff88; color: #fff; text-transform: uppercase; letter-spacing: 2px; }
+        /* THE MAIN FRAME */
+        .container { border: 1px solid #1a1a1a; padding: 45px; max-width: 900px; margin: 40px auto; position: relative; background: #080808; box-shadow: 0 0 60px rgba(0, 255, 136, 0.03); border-radius: 2px; }
         
-        h1 { font-size: 3.5rem; letter-spacing: 15px; text-transform: uppercase; margin-bottom: 5px; text-align: center; color: #fff; text-shadow: 0 0 20px rgba(0, 255, 136, 0.3); }
-        .sub-header { color: #888; letter-spacing: 6px; margin-bottom: 40px; text-align: center; font-size: 0.8rem; }
+        /* SCANLINE EFFECT OVER THE WHOLE SITE */
+        .container::before { content: " "; position: absolute; top: 0; left: 0; bottom: 0; right: 0; background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02)); z-index: 2; background-size: 100% 2px, 3px 100%; pointer-events: none; }
+
+        .status-header { display: flex; justify-content: space-between; font-size: 0.65rem; border-bottom: 1px solid #222; padding-bottom: 15px; margin-bottom: 40px; color: #444; letter-spacing: 2px; }
+        .status-active { color: #00ff88; font-weight: bold; }
+
+        h1 { font-size: 3.8rem; letter-spacing: 18px; text-transform: uppercase; margin: 0; text-align: center; color: #fff; text-shadow: 0 0 15px rgba(255,255,255,0.1); }
+        .sub-header { color: #555; letter-spacing: 8px; margin-bottom: 50px; text-align: center; font-size: 0.75rem; text-transform: uppercase; }
+
+        /* ELITE ACCESS GATEWAY */
+        .access-gate { border: 1px solid #333; padding: 50px 20px; text-align: center; background: #000; margin-bottom: 50px; }
+        .gate-title { color: #fff; letter-spacing: 5px; font-size: 0.9rem; margin-bottom: 10px; }
         
-        /* MEMBERSHIP BOX */
-        .membership-box { border: 1px solid #333; padding: 40px; margin: 40px 0; background: #080808; text-align: center; }
-        input[type="email"] { background: #000; border: 1px solid #333; color: #fff; padding: 15px; margin-bottom: 15px; font-family: monospace; width: 100%; max-width: 300px; text-align: center; }
+        input[type="email"] { background: #0a0a0a; border: 1px solid #222; color: #00ff88; padding: 15px; width: 280px; text-align: center; font-family: monospace; font-size: 0.8rem; margin-bottom: 20px; outline: none; transition: 0.3s; }
+        input[type="email"]:focus { border-color: #00ff88; background: #111; }
+
+        .btn { background: transparent; border: 1px solid #00ff88; color: #00ff88; padding: 15px 40px; font-weight: bold; text-transform: uppercase; cursor: pointer; letter-spacing: 3px; font-size: 0.7rem; transition: 0.4s; }
+        .btn:hover { background: #00ff88; color: #000; box-shadow: 0 0 25px rgba(0, 255, 136, 0.5); }
+
+        /* GLOBAL NODE TABLE */
+        .node-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.75rem; }
+        .node-table th { text-align: left; color: #333; padding: 10px; border-bottom: 1px solid #222; letter-spacing: 2px; }
+        .node-table td { padding: 15px 10px; border-bottom: 1px solid #111; color: #888; }
+        .online-blink { height: 8px; width: 8px; background-color: #00ff88; border-radius: 50%; display: inline-block; margin-right: 10px; animation: blink 1.5s infinite; }
         
-        .btn { display: inline-block; padding: 15px 35px; border: 1px solid #00ff88; color: #00ff88;
+        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+
+        .footer { margin-top: 60px; font-size: 0.6rem; color: #1a1a1a; text-align: center; letter-spacing: 5px; border-top: 1px solid #111; padding-top: 30px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="status-header">
+            <div>NETWORK_STATUS: <span class="status-active">ENCRYPTED</span></div>
+            <div>LOCATION: <span class="status-active">GLOBAL_SATELLITE_LINK</span></div>
+            <div>UPLINK: <span class="status-active">STABLE</span></div>
+        </div>
+
+        <h1>AETHE
