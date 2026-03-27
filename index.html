@@ -3,81 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AETHELGARD // ELITE PORTAL</title>
+    <title>AETHELGARD // ARCHIVE_LOGS</title>
     <style>
-        body { background-color: #050505; color: #00ff88; font-family: 'Courier New', monospace; margin: 0; padding: 20px; overflow-x: hidden; }
-        .container { border: 1px solid #1a1a1a; padding: 45px; max-width: 900px; margin: 40px auto; position: relative; background: #080808; box-shadow: 0 0 60px rgba(0, 255, 136, 0.03); border-radius: 2px; }
-        
-        /* CRT SCANLINE EFFECT */
-        .container::before { content: " "; position: absolute; top: 0; left: 0; bottom: 0; right: 0; background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02)); z-index: 2; background-size: 100% 2px, 3px 100%; pointer-events: none; }
+        /* THEME: TERMINAL MONOCHROME */
+        body { 
+            background-color: #050505; color: #00ff88; 
+            font-family: 'Courier New', Courier, monospace; 
+            margin: 0; padding: 40px; line-height: 1.6;
+        }
 
-        .status-header { display: flex; justify-content: space-between; font-size: 0.65rem; border-bottom: 1px solid #222; padding-bottom: 15px; margin-bottom: 40px; color: #444; letter-spacing: 2px; }
-        .status-active { color: #00ff88; font-weight: bold; }
+        .terminal-window {
+            max-width: 850px; margin: 0 auto;
+            border: 1px solid #1a1a1a; padding: 35px;
+            background: rgba(10, 10, 10, 0.9);
+            box-shadow: 0 0 50px rgba(0, 255, 136, 0.05);
+        }
 
-        h1 { font-size: 3.8rem; letter-spacing: 18px; text-transform: uppercase; margin: 0; text-align: center; color: #fff; text-shadow: 0 0 15px rgba(255,255,255,0.1); }
-        .sub-header { color: #555; letter-spacing: 8px; margin-bottom: 50px; text-align: center; font-size: 0.75rem; text-transform: uppercase; }
+        /* THE GO BACK SECTION YOU LIKED */
+        .nav-header { border-bottom: 1px solid #222; padding-bottom: 20px; margin-bottom: 35px; display: flex; justify-content: space-between; align-items: center; }
+        .back-link { color: #fff; text-decoration: none; border: 1px solid #fff; padding: 8px 15px; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; }
+        .back-link:hover { background: #fff; color: #000; box-shadow: 0 0 15px #fff; }
 
-        /* THE READ-ONLY VAULT INTERFACE */
-        .vault-display { border: 1px solid #333; padding: 50px 20px; text-align: center; background: #000; margin-bottom: 50px; border-style: double; }
-        .vault-title { color: #fff; letter-spacing: 5px; font-size: 0.9rem; margin-bottom: 10px; }
-        
-        .btn { background: transparent; border: 1px solid #00ff88; color: #00ff88; padding: 15px 40px; font-weight: bold; text-transform: uppercase; cursor: pointer; letter-spacing: 3px; font-size: 0.7rem; transition: 0.4s; text-decoration: none; display: inline-block; }
-        .btn:hover { background: #00ff88; color: #000; box-shadow: 0 0 25px rgba(0, 255, 136, 0.5); }
+        .log-entry { margin-bottom: 50px; border-left: 2px solid #00ff88; padding-left: 25px; position: relative; }
+        .timestamp { font-weight: bold; color: #fff; font-size: 0.8rem; background: #002200; padding: 2px 10px; }
+        h2 { font-size: 1.1rem; text-transform: uppercase; margin: 15px 0 5px 0; color: #00ff88; letter-spacing: 3px; }
+        p { color: #888; font-size: 0.85rem; margin: 5px 0; }
 
-        /* DIRECTIVES GRID */
-        .directives-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
-        .directive-card { border-left: 2px solid #00ff88; padding-left: 20px; }
-        .directive-card h4 { font-size: 0.8rem; color: #fff; margin: 0 0 10px 0; letter-spacing: 2px; }
-        .directive-card p { font-size: 0.7rem; color: #666; line-height: 1.6; margin: 0; }
-
-        .footer { margin-top: 60px; font-size: 0.6rem; color: #1a1a1a; text-align: center; letter-spacing: 5px; border-top: 1px solid #111; padding-top: 30px; }
+        .cursor { display: inline-block; width: 8px; height: 15px; background: #00ff88; animation: blink 1s infinite; margin-left: 5px; vertical-align: middle; }
+        @keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="status-header">
-            <div>DISTRIBUTION: <span class="status-active">INDEPENDENT</span></div>
-            <div>FREQUENCY: <span class="status-active">HIGH_OCTANE</span></div>
-            <div>MASTERS: <span class="status-active">OWNED_100%</span></div>
+    <div class="terminal-window">
+        <div class="nav-header">
+            <a href="index.html" class="back-link">< RETURN_TO_PORTAL</a>
+            <div style="font-size: 0.6rem; color: #444;">[ DIRECTIVE: THE_BLUEPRINT ]</div>
         </div>
 
-        <h1>AETHELGARD</h1>
-        <div class="sub-header">Executive Producer // Digital Architect</div>
+        <h1 style="font-size: 1.4rem; margin-bottom: 40px;">ACCESSING_AETHELGARD_HISTORY...<span class="cursor"></span></h1>
 
-        <div class="vault-display">
-            <div class="vault-title">SECURE_ASSET_VAULT</div>
-            <p style="color: #444; font-size: 0.7rem; margin-bottom: 30px;">CONNECTION ENCRYPTED. PUBLIC UPLINK DISABLED.</p>
-            <div style="color: #00ff88; font-size: 0.6rem; letter-spacing: 2px;">[ AUTH_LEVEL: GHOST ]</div>
+        <div class="log-entry">
+            <span class="timestamp">2026-03-27 // 18:30</span>
+            <h2>Blueprint: Independent Infrastructure</h2>
+            <p>> Finalized AETHELGARD Elite Interface.</p>
+            <p>> Scrubbed all third-party dependencies for 100% independent hosting.</p>
+            <p>> Status: PORTAL STABILIZED.</p>
         </div>
 
-        <div class="directives-grid">
-            <div class="directive-card">
-                <h4>THE GHOST PROTOCOL</h4>
-                <p>Dominance in the sync-licensing space. Moving units without major label interference. Independent and untouchable.</p>
-            </div>
-            <div class="directive-card">
-                <h4>ELITE ARCHITECTURE</h4>
-                <p>Constructing digital fortresses for the heavy hitters. High-fidelity portals for creators who own their masters.</p>
-            </div>
-            <div class="directive-card">
-                <h4>VAULT ACQUISITION</h4>
-                <p>Private roster of elite collaborators. No mid-tier energy—pure distribution for the inner circle only.</p>
-            </div>
-            <div class="directive-card">
-                <h4>GLOBAL INFRASTRUCTURE</h4>
-                <p>Scaling private satellite nodes to host the future of the rap economy on a worldwide scale.</p>
-            </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 60px;">
-            <a href="log.html" class="btn">ACCESS THE BLUEPRINT</a>
-        </div>
-
-        <div class="footer">
-            AETHELGARD // GALACTIC CURRENCY // NO_INTERMEDIARIES_REQUIRED
-        </div>
-    </div>
-
-</body>
-</html>
+        <div class="log-entry">
+            <span class="timestamp">2026-03-24 // 12:00</span>
+            <h2>Asset Vault: High-Octane Audio</h2>
+            <p>> Ghost/Mama master files secured in the encrypted vault.</p>
+            <p>> One
