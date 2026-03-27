@@ -1,35 +1,85 @@
-<div style="margin-top: 60px;">
-    <h3 style="font-size: 0.8rem; letter-spacing: 5px; color: #fff; border-bottom: 1px solid #222; padding-bottom: 10px; margin-bottom: 30px;">[ CORE_DIRECTIVES_2026 ]</h3>
-    
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AETHELGARD // ELITE PORTAL</title>
+    <style>
+        body { background-color: #050505; color: #00ff88; font-family: 'Courier New', monospace; margin: 0; padding: 20px; overflow-x: hidden; }
+        .container { border: 1px solid #1a1a1a; padding: 45px; max-width: 900px; margin: 40px auto; position: relative; background: #080808; box-shadow: 0 0 60px rgba(0, 255, 136, 0.03); border-radius: 2px; }
         
-        <div style="border-left: 2px solid #00ff88; padding-left: 15px; margin-bottom: 20px;">
-            <h4 style="font-size: 0.75rem; margin: 0; color: #00ff88;">SONIC_SYNCHRONIZATION</h4>
-            <p style="font-size: 0.7rem; color: #666; margin-top: 5px; line-height: 1.4;">
-                Deploying high-fidelity audio assets (Ghost/Mama) for synchronization licensing and elite distribution.
-            </p>
+        /* CRT SCANLINE EFFECT */
+        .container::before { content: " "; position: absolute; top: 0; left: 0; bottom: 0; right: 0; background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02)); z-index: 2; background-size: 100% 2px, 3px 100%; pointer-events: none; }
+
+        .status-header { display: flex; justify-content: space-between; font-size: 0.65rem; border-bottom: 1px solid #222; padding-bottom: 15px; margin-bottom: 40px; color: #444; letter-spacing: 2px; }
+        .status-active { color: #00ff88; font-weight: bold; }
+
+        h1 { font-size: 3.8rem; letter-spacing: 18px; text-transform: uppercase; margin: 0; text-align: center; color: #fff; text-shadow: 0 0 15px rgba(255,255,255,0.1); }
+        .sub-header { color: #555; letter-spacing: 8px; margin-bottom: 50px; text-align: center; font-size: 0.75rem; text-transform: uppercase; }
+
+        /* THE DISTRIBUTION GATEWAY */
+        .access-gate { border: 1px solid #333; padding: 50px 20px; text-align: center; background: #000; margin-bottom: 50px; }
+        .gate-title { color: #fff; letter-spacing: 5px; font-size: 0.9rem; margin-bottom: 10px; }
+        
+        input[type="email"] { background: #0a0a0a; border: 1px solid #222; color: #00ff88; padding: 15px; width: 280px; text-align: center; font-family: monospace; font-size: 0.8rem; margin-bottom: 20px; outline: none; }
+
+        .btn { background: transparent; border: 1px solid #00ff88; color: #00ff88; padding: 15px 40px; font-weight: bold; text-transform: uppercase; cursor: pointer; letter-spacing: 3px; font-size: 0.7rem; transition: 0.4s; }
+        .btn:hover { background: #00ff88; color: #000; box-shadow: 0 0 25px rgba(0, 255, 136, 0.5); }
+
+        /* DIRECTIVES SECTION */
+        .directives-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
+        .directive-card { border-left: 2px solid #00ff88; padding-left: 20px; }
+        .directive-card h4 { font-size: 0.8rem; color: #fff; margin: 0 0 10px 0; letter-spacing: 2px; }
+        .directive-card p { font-size: 0.7rem; color: #666; line-height: 1.6; margin: 0; }
+
+        .footer { margin-top: 60px; font-size: 0.6rem; color: #1a1a1a; text-align: center; letter-spacing: 5px; border-top: 1px solid #111; padding-top: 30px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="status-header">
+            <div>DISTRIBUTION: <span class="status-active">INDEPENDENT</span></div>
+            <div>FREQUENCY: <span class="status-active">HIGH_OCTANE</span></div>
+            <div>MASTERS: <span class="status-active">OWNED_100%</span></div>
         </div>
 
-        <div style="border-left: 2px solid #00ff88; padding-left: 15px; margin-bottom: 20px;">
-            <h4 style="font-size: 0.75rem; margin: 0; color: #00ff88;">INTERFACE_ARCHAEOLOGY</h4>
-            <p style="font-size: 0.7rem; color: #666; margin-top: 5px; line-height: 1.4;">
-                Constructing bespoke digital environments and secure portals for high-value clients and creators.
-            </p>
+        <h1>AETHELGARD</h1>
+        <div class="sub-header">Executive Producer // Digital Architect</div>
+
+        <div class="access-gate">
+            <div class="gate-title">REQUEST MASTER DISTRIBUTION</div>
+            <p style="color: #444; font-size: 0.7rem; margin-bottom: 30px;">JOIN THE ELITE ROSTER FOR UNRELEASED AUDIO ASSETS</p>
+            
+            <form action="https://formspree.io/f/xjgpggwv" method="POST">
+                <input type="email" name="email" placeholder="ARTIST_AFFILIATION" required>
+                <br>
+                <button type="submit" class="btn">SECURE THE BAG</button>
+            </form>
         </div>
 
-        <div style="border-left: 2px solid #00ff88; padding-left: 15px; margin-bottom: 20px;">
-            <h4 style="font-size: 0.75rem; margin: 0; color: #00ff88;">AETHELGARD_EXPANSION</h4>
-            <p style="font-size: 0.7rem; color: #666; margin-top: 5px; line-height: 1.4;">
-                Scaling global satellite node infrastructure to provide private hosting for the elite creator economy.
-            </p>
+        <div class="directives-grid">
+            <div class="directive-card">
+                <h4>THE GHOST PROTOCOL</h4>
+                <p>Establishing dominance in the sync-licensing space. Moving units without the major label interference. Independent and untouchable.</p>
+            </div>
+            <div class="directive-card">
+                <h4>ELITE ARCHITECTURE</h4>
+                <p>Constructing digital fortresses for the heavy hitters. High-fidelity portals designed for creators who own their masters.</p>
+            </div>
+            <div class="directive-card">
+                <h4>VAULT ACQUISITION</h4>
+                <p>Collecting a roster of elite collaborators. No mid-tier energy—just pure, encrypted distribution for the inner circle.</p>
+            </div>
+            <div class="directive-card">
+                <h4>GLOBAL INFRASTRUCTURE</h4>
+                <p>Scaling private satellite nodes to host the future of the rap economy. Independent hosting on a worldwide scale.</p>
+            </div>
         </div>
 
-        <div style="border-left: 2px solid #00ff88; padding-left: 15px; margin-bottom: 20px;">
-            <h4 style="font-size: 0.75rem; margin: 0; color: #00ff88;">MEMBER_VAULT_ACQUISITION</h4>
-            <p style="font-size: 0.7rem; color: #666; margin-top: 5px; line-height: 1.4;">
-                Aggregating an exclusive database of collaborators and elite access holders via the AETHELGARD gateway.
-            </p>
+        <div style="text-align: center; margin-top: 60px;">
+            <a href="log.html" class="btn" style="border-color: #fff; color: #fff;">READ THE BLUEPRINT</a>
         </div>
 
-    </div>
-</div>
+        <div class="footer">
+            A
