@@ -3,64 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SYSTEM_LOGS // CYBORG_TRAP</title>
+    <title>AETHELGARD // ELITE PORTAL</title>
     <style>
-        /* TERMINAL THEME: MONOCHROME GREEN */
-        body { 
-            background-color: #000; color: #00ff41; 
-            font-family: 'Courier New', Courier, monospace; 
-            margin: 0; padding: 40px; line-height: 1.6;
-        }
-
-        .terminal-window {
-            max-width: 800px; margin: 0 auto;
-            border: 1px solid #00ff41; padding: 30px;
-            box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
-        }
-
-        .log-entry { margin-bottom: 40px; border-left: 2px solid #00ff41; padding-left: 20px; }
-        .timestamp { color: #fff; background: #004400; padding: 2px 8px; font-size: 0.8rem; }
-        h2 { font-size: 1.2rem; text-transform: uppercase; margin: 10px 0; }
-        p { color: #00ff41; opacity: 0.8; font-size: 0.9rem; }
-
-        /* BACK TO HOME LINK */
-        .nav-link { color: #fff; text-decoration: none; border: 1px solid #fff; padding: 5px 10px; font-size: 0.7rem; transition: 0.3s; }
-        .nav-link:hover { background: #fff; color: #000; }
-
-        .cursor { display: inline-block; width: 10px; height: 18px; background: #00ff41; animation: blink 1s infinite; vertical-align: middle; }
-        @keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
-    </style>
-</head>
-<body>
-
-    <div class="terminal-window">
-        <div style="margin-bottom: 30px;">
-            <a href="index.html" class="nav-link">< RETURN_TO_BASE</a>
-        </div>
-
-        <h1>ROOT@CYBORG_TRAP:~# ACCESSING_LOGS...<span class="cursor"></span></h1>
-        <hr style="border: 0; border-top: 1px solid #00ff41; margin: 20px 0;">
-
-        <div class="log-entry">
-            <span class="timestamp">2026-03-27 // 17:45</span>
-            <h2>Project: Portfolio Expansion</h2>
-            <p>> Successfully deployed Luxury Noir and Cyborg Trap interfaces.<br>
-               > Integrated Formspree API for member acquisition.<br>
-               > Status: ALL SYSTEMS OPERATIONAL.</p>
-        </div>
-
-        <div class="log-entry">
-            <span class="timestamp">2026-03-20 // 09:12</span>
-            <h2>Project: Galactic Currency</h2>
-            <p>> Initialized repository on GitHub.<br>
-               > Optimized CSS for deep-space black aesthetics.<br>
-               > Locked in ONE-STOP rights for "GHOST" and "MAMA".</p>
-        </div>
-
-        <div style="text-align: center; color: #004400; font-size: 0.7rem; margin-top: 50px;">
-            -- END OF ENCRYPTED DATA --
-        </div>
-    </div>
-
-</body>
-</html>
+        /* THEME: DEEP OBSIDIAN & NEON EMERALD */
+        body { background-color: #050505; color: #00ff88; font-family: 'Courier New', monospace; margin: 0; padding: 20px; }
+        .container { border: 1px solid #1a1a1a; padding: 40px; max-width: 900px; margin: 40px auto; border-radius: 4px; background: rgba(10, 10, 10, 0.98); box-shadow: 0 0 50px rgba(0, 255, 136, 0.05); }
+        
+        .status-bar { background: #111; padding: 12px; font-size: 0.75rem; margin-bottom: 40px; border-left: 4px solid #00ff88; color: #fff; text-transform: uppercase; letter-spacing: 2px; }
+        
+        h1 { font-size: 3.5rem; letter-spacing: 15px; text-transform: uppercase; margin-bottom: 5px; text-align: center; color: #fff; text-shadow: 0 0 20px rgba(0, 255, 136, 0.3); }
+        .sub-header { color: #888; letter-spacing: 6px; margin-bottom: 40px; text-align: center; font-size: 0.8rem; }
+        
+        /* MEMBERSHIP BOX */
+        .membership-box { border: 1px solid #333; padding: 40px; margin: 40px 0; background: #080808; text-align: center; }
+        input[type="email"] { background: #000; border: 1px solid #333; color: #fff; padding: 15px; margin-bottom: 15px; font-family: monospace; width: 100%; max-width: 300px; text-align: center; }
+        
+        .btn { display: inline-block; padding: 15px 35px; border: 1px solid #00ff88; color: #00ff88;
