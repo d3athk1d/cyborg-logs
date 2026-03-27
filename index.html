@@ -3,65 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AETHELGARD // ARCHIVE_LOGS</title>
+    <title>AETHELGARD // HUB</title>
     <style>
-        body { background-color: #050505; color: #00ff88; font-family: 'Courier New', monospace; margin: 0; padding: 40px; line-height: 1.6; }
-        .terminal-window { max-width: 850px; margin: 0 auto; border: 1px solid #1a1a1a; padding: 35px; background: rgba(10, 10, 10, 0.9); box-shadow: 0 0 50px rgba(0, 255, 136, 0.05); }
-        .nav-header { border-bottom: 2px solid #00ff88; padding-bottom: 30px; margin-bottom: 40px; }
-        .back-link { color: #fff; text-decoration: none; border: 1px solid #fff; padding: 8px 15px; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; display: inline-block; }
-        .back-link:hover { background: #fff; color: #000; box-shadow: 0 0 15px #fff; }
-        .identity-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; background: rgba(0,255,136,0.03); padding: 20px; border: 1px solid #1a1a1a; margin-top: 25px; }
-        .log-entry { margin-bottom: 50px; border-left: 2px solid #00ff88; padding-left: 25px; }
-        .timestamp { font-weight: bold; color: #fff; font-size: 0.8rem; background: #002200; padding: 2px 10px; }
-        h2 { font-size: 1.1rem; text-transform: uppercase; margin: 15px 0 5px 0; color: #00ff88; letter-spacing: 3px; }
-        p { color: #888; font-size: 0.85rem; margin: 5px 0; }
-        .portal-exit { border: 1px solid #333; padding: 40px; text-align: center; background: #000; margin-top: 60px; border-style: double; }
-        .portal-btn { background: transparent; border: 1px solid #00ff88; color: #00ff88; padding: 15px 40px; font-weight: bold; text-transform: uppercase; cursor: pointer; letter-spacing: 3px; font-size: 0.7rem; text-decoration: none; display: inline-block; transition: 0.4s; }
-        .portal-btn:hover { background: #00ff88; color: #000; box-shadow: 0 0 25px rgba(0, 255, 136, 0.5); }
-        .cursor { display: inline-block; width: 8px; height: 15px; background: #00ff88; animation: blink 1s infinite; vertical-align: middle; }
-        @keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
+        body { background-color: #050505; color: #fff; font-family: 'Courier New', monospace; margin: 0; padding: 0; display: flex; align-items: center; justify-content: center; height: 100vh; text-align: center; }
+        .glitch-title { font-size: 3rem; letter-spacing: 15px; color: #00ff88; text-transform: uppercase; margin-bottom: 50px; }
+        .nav-container { display: flex; gap: 25px; justify-content: center; }
+        .btn { text-decoration: none; border: 1px solid #00ff88; padding: 20px 40px; color: #00ff88; font-size: 0.8rem; letter-spacing: 4px; transition: 0.4s; text-transform: uppercase; }
+        .btn:hover { background: #00ff88; color: #000; box-shadow: 0 0 30px rgba(0, 255, 136, 0.4); }
+        .btn-white { border-color: #fff; color: #fff; }
+        .btn-white:hover { background: #fff; color: #000; box-shadow: 0 0 30px rgba(255, 255, 255, 0.4); }
     </style>
 </head>
 <body>
-    <div class="terminal-window">
-        <div class="nav-header">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                <a href="bio.html" class="back-link">< ACCESS_BIOGRAPHY</a>
-                <div style="text-align: right; font-size: 0.65rem; color: #444; letter-spacing: 2px;">
-                    UPLINK_NODE: <span style="color:#00ff88;">AETHELGARD_BLUEPRINT</span>
-                </div>
-            </div>
-            <div class="identity-grid">
-                <div>
-                    <div style="font-size: 0.6rem; color: #00ff88; letter-spacing: 3px;">Identity_Profile</div>
-                    <div style="font-size: 0.9rem; color: #fff; font-weight: bold; letter-spacing: 2px;">DECSEC // EXECUTIVE PRODUCER</div>
-                </div>
-                <div style="border-left: 1px solid #222; padding-left: 20px;">
-                    <div style="font-size: 0.6rem; color: #00ff88; letter-spacing: 3px;">Status</div>
-                    <div style="font-size: 0.7rem; color: #888;">MASTERS: <span style="color:#fff;">100%_OWNED</span></div>
-                </div>
-            </div>
-        </div>
-
-        <h1>ACCESSING_HISTORY...<span class="cursor"></span></h1>
-
-        <div class="log-entry">
-            <span class="timestamp">2026-03-27</span>
-            <h2>Blueprint: Independent Infrastructure</h2>
-            <p>> Finalized AETHELGARD Elite Interface.</p>
-            <p>> Scrubbed all third-party dependencies for independent hosting.</p>
-        </div>
-
-        <div class="log-entry">
-            <span class="timestamp">2026-03-24</span>
-            <h2>Asset Vault: High-Octane Audio</h2>
-            <p>> Ghost/Mama master files secured in the encrypted vault.</p>
-            <p>> One-stop synchronization rights verified for professional licensing.</p>
-        </div>
-
-        <div class="portal-exit">
-            <div style="color: #fff; letter-spacing: 5px; font-size: 0.9rem; margin-bottom: 10px;">RE-ENTRY PORTAL</div>
-            <a href="index.html" class="portal-btn">OPEN MAIN INTERFACE</a>
+    <div>
+        <h1 class="glitch-title">AETHELGARD</h1>
+        <div class="nav-container">
+            <a href="log.html" class="btn">ACCESS_BLUEPRINT</a>
+            <a href="portal.html" class="btn btn-white">ELITE_PORTAL</a>
         </div>
     </div>
 </body>
