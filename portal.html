@@ -3,49 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AETHELGARD // ELITE_PORTAL</title>
+    <title>AETHELGARD // HUB</title>
     <style>
-        body { background-color: #050505; color: #00ff88; font-family: 'Courier New', monospace; margin: 0; padding: 40px; }
-        .container { max-width: 850px; margin: 0 auto; border: 1px solid #1a1a1a; padding: 35px; background: #080808; }
-        .nav-header { border-bottom: 1px solid #222; padding-bottom: 20px; margin-bottom: 40px; }
-        .back-link { color: #fff; text-decoration: none; border: 1px solid #fff; padding: 8px 15px; font-size: 0.7rem; text-transform: uppercase; }
-        .back-link:hover { background: #fff; color: #000; }
-        .terminal-input-wrap { background: #000; border: 1px solid #333; padding: 20px; margin-top: 40px; }
-        #cmdInput { background: transparent; border: none; color: #00ff88; outline: none; font-family: inherit; width: 80%; font-size: 1rem; }
-        #hiddenVault { display: none; margin-top: 20px; padding: 20px; border: 1px dashed #00ff88; background: rgba(0, 255, 136, 0.05); }
+        body { background-color: #050505; color: #fff; font-family: 'Courier New', monospace; margin: 0; padding: 0; display: flex; align-items: center; justify-content: center; height: 100vh; text-align: center; }
+        .glitch-title { font-size: 3rem; letter-spacing: 15px; color: #00ff88; text-transform: uppercase; margin-bottom: 50px; }
+        .nav-container { display: flex; gap: 25px; justify-content: center; flex-wrap: wrap; }
+        .btn { text-decoration: none; border: 1px solid #00ff88; padding: 20px 40px; color: #00ff88; font-size: 0.8rem; letter-spacing: 4px; transition: 0.4s; text-transform: uppercase; min-width: 200px; }
+        .btn:hover { background: #00ff88; color: #000; box-shadow: 0 0 30px rgba(0, 255, 136, 0.4); }
+        .btn-white { border-color: #fff; color: #fff; }
+        .btn-white:hover { background: #fff; color: #000; box-shadow: 0 0 30px rgba(255, 255, 255, 0.4); }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="nav-header">
-            <a href="index.html" class="back-link">< RETURN_TO_HUB</a>
+    <div>
+        <h1 class="glitch-title">AETHELGARD</h1>
+        <div class="nav-container">
+            <a href="log.html" class="btn">ACCESS_BLUEPRINT</a>
+            <a href="portal.html" class="btn btn-white">ELITE_PORTAL</a>
         </div>
-
-        <h1 style="letter-spacing: 10px; color: #fff;">ELITE_PORTAL</h1>
-        <p style="color: #444; font-size: 0.7rem;">LEVEL 5 ACCESS REQUIRED</p>
-
-        <div class="terminal-input-wrap">
-            <span style="font-size: 0.6rem; color: #444; display: block; margin-bottom: 10px;">ENTER_OVERRIDE_CODE:</span>
-            <div style="display: flex;">
-                <span style="margin-right: 10px;">></span>
-                <input type="text" id="cmdInput" placeholder="CODE_HERE..." autocomplete="off">
-            </div>
-
-            <div id="hiddenVault">
-                <h3 style="color: #fff; margin: 0 0 10px 0;">[ ACCESS_GRANTED ]</h3>
-                <p style="font-size: 0.7rem; color: #888;">UNRELEASED_TRACKS_VAULT: <a href="#" style="color: #00ff88;">PRIVATE_LINK_01.EXE</a></p>
-            </div>
-        </div>
+        <p style="color: #222; font-size: 0.6rem; margin-top: 40px; letter-spacing: 5px;">AUTHORIZATION_REQUIRED</p>
     </div>
-
-    <script>
-        document.getElementById('cmdInput').addEventListener('input', (e) => {
-            if (e.target.value.toUpperCase() === 'AETHELGARD') {
-                document.getElementById('hiddenVault').style.display = 'block';
-                e.target.value = 'AUTHORIZED';
-                e.target.disabled = true;
-            }
-        });
-    </script>
 </body>
 </html>
