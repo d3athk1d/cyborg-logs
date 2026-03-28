@@ -9,11 +9,9 @@
     <style>
         body { background-color: #0a0a0c; color: #ffffff; overflow-x: hidden; margin: 0; }
         .video-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -10; overflow: hidden; }
-        .video-container video { width: 100%; height: 100%; object-fit: cover; opacity: 0.45; }
+        .video-container video { width: 100%; height: 100%; object-fit: cover; opacity: 0.4; }
         .mesh-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; background: radial-gradient(circle at 50% 50%, rgba(52, 73, 255, 0.1) 0%, transparent 50%); }
         .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; }
-        .scroll-reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
-        .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
     </style>
 </head>
 <body class="font-['Space_Grotesk']">
@@ -32,24 +30,34 @@
     </nav>
 
     <main class="relative z-10 pt-32 text-center px-6 min-h-screen flex flex-col items-center justify-center">
-        <div class="scroll-reveal glass-card p-4 mb-8 border-blue-500/20 inline-flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-            <span class="text-[10px] font-bold uppercase tracking-widest text-blue-300">Vault_Decrypted</span>
-        </div>
-
-        <div class="scroll-reveal">
-            <h1 class="font-['Outfit'] text-7xl md:text-9xl font-black mb-8 leading-none tracking-tighter uppercase">
-                ELITE<br><span class="text-blue-600">PORTAL</span>
-            </h1>
-            <p class="text-zinc-400 max-w-xl mx-auto font-light leading-relaxed">Independent infrastructure node finalized. Secure audio distribution active.</p>
-        </div>
+        <h1 class="font-['Outfit'] text-7xl md:text-9xl font-black mb-8 leading-none tracking-tighter uppercase">
+            ELITE<br><span class="text-blue-600">PORTAL</span>
+        </h1>
+        <p class="text-zinc-400 max-w-xl mx-auto font-light leading-relaxed">Independent infrastructure node finalized. Secure audio distribution active.</p>
 
         <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl">
-            <div class="scroll-reveal glass-card p-12 text-left group hover:bg-white/5 transition-all">
+            <div class="glass-card p-12 text-left">
                 <h3 class="text-2xl font-bold uppercase mb-4">Owned</h3>
                 <p class="text-zinc-500 text-sm">100% control over distribution nodes and audio masters.</p>
             </div>
-            <div class="scroll-reveal glass-card p-12 text-left group hover:bg-white/5 transition-all" style="transition-delay: 100ms;">
+            <div class="glass-card p-12 text-left">
                 <h3 class="text-2xl font-bold uppercase mb-4">Private</h3>
                 <p class="text-zinc-500 text-sm">Built from the ground up. Zero third-party dependencies.</p>
             </div>
+            <div class="glass-card p-12 text-left">
+                <h3 class="text-2xl font-bold uppercase mb-4">Secure</h3>
+                <p class="text-zinc-500 text-sm">Encrypted asset vaults and satellite uplink confirmation.</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('mousemove', (e) => {
+            const glow = document.getElementById('mouse-glow');
+            const x = (e.clientX / window.innerWidth) * 100;
+            const y = (e.clientY / window.innerHeight) * 100;
+            glow.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(52, 73, 255, 0.25) 0%, transparent 40%)`;
+        });
+    </script>
+</body>
+</html>
