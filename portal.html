@@ -2,35 +2,63 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AETHELGARD // GATEWAY</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { background: #000; color: #00ff00; font-family: monospace; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
-        input { background: transparent; border: 1px solid #00ff00; color: #00ff00; padding: 10px; text-align: center; outline: none; width: 300px; font-size: 1.2rem; letter-spacing: 4px; }
-    </style>
-</head>
-<body>
-    <div class="text-center">
-        <div class="mb-4 opacity-50 text-xs">ENTER_ENCRYPTION_KEY</div>
-        <input type="password" id="key" maxlength="10" autocomplete="off" autofocus>
-        <div id="status" class="mt-4 text-[10px] uppercase tracking-widest">Awaiting_Input...</div>
-    </div>
+        body {
+            background: #000;
+            color: #3449ff;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
 
-    <script>
-        const input = document.getElementById('key');
-        const status = document.getElementById('status');
+        .portal-box {
+            text-align: center;
+            padding: 40px;
+            border: 1px solid rgba(52, 73, 255, 0.3);
+            background: rgba(52, 73, 255, 0.02);
+            backdrop-filter: blur(10px);
+            border-radius: 2px;
+        }
 
-        input.addEventListener('input', (e) => {
-            if (e.target.value.toUpperCase() === 'AETHELGARD') {
-                status.innerText = "ACCESS_GRANTED... REDIRECTING";
-                input.style.borderColor = "#fff";
-                input.style.color = "#fff";
-                setTimeout(() => {
-                    // This sends you to the NEW page you just made
-                    window.location.href = "elite.html"; 
-                }, 1000);
-            }
-        });
-    </script>
-</body>
-</html>
+        input {
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid #3449ff;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            outline: none;
+            width: 280px;
+            font-size: 1.5rem;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            border-bottom-color: #fff;
+            box-shadow: 0 10px 20px -10px rgba(52, 73, 255, 0.5);
+        }
+
+        .status-text {
+            margin-top: 20px;
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0.6;
+        }
+
+        /* Scanline Effect */
+        body::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 2
