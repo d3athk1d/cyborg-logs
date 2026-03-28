@@ -14,14 +14,14 @@
     <div class="box">
         <div class="mb-6 opacity-40 text-[10px] tracking-[0.5em]">ENCRYPTION_REQUIRED</div>
         <input type="password" id="gate" placeholder="********" autofocus>
-        <div id="status" class="mt-4 text-[10px] tracking-widest opacity-60">AWAITING_INPUT...</div>
+        <div id="status" class="mt-4 text-[10px] tracking-widest opacity-60 uppercase">Awaiting_Input...</div>
     </div>
     <script>
         const gate = document.getElementById('gate');
         gate.addEventListener('input', (e) => {
             if (e.target.value.toUpperCase() === 'AETHELGARD') {
                 document.getElementById('status').innerText = "ACCESS_GRANTED";
-                setTimeout(() => { window.location.href = "elite.html"; }, 1000);
+                // You can add a new page destination here later
             }
         });
     </script>
