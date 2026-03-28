@@ -3,64 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DEDSEC // USER_LOG</title>
+    <title>DEDSEC // LOG_ENTRY</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { background-color: #000; color: #3449ff; font-family: monospace; text-transform: uppercase; }
-        .line { border-bottom: 1px solid rgba(52, 73, 255, 0.2); }
+        body { 
+            background-color: #000; 
+            color: #3449ff; 
+            font-family: monospace; 
+            text-transform: uppercase;
+        }
+        .header-line { border-bottom: 1px solid rgba(52, 73, 255, 0.3); }
         .faded { color: rgba(52, 73, 255, 0.4); }
+        .grid-line { height: 1px; background: rgba(52, 73, 255, 0.2); width: 100%; }
+        /* This makes the text look like a terminal readout */
+        .log-text { color: #fff; opacity: 0.9; letter-spacing: 0.1em; line-height: 1.8; }
         a:hover { color: #fff; text-decoration: underline; }
     </style>
 </head>
-<body class="p-8 md:p-20">
+<body class="min-h-screen flex flex-col items-center justify-start pt-20 p-6">
 
-    <div class="mb-12 line pb-4 flex justify-between items-end">
-        <div>
-            <h1 class="text-xl font-bold tracking-[0.3em] text-white">USER_LOG // DEDSEC</h1>
-            <p class="text-[10px] faded mt-2">TIMESTAMP: 2026.03.27</p>
-        </div>
-        <a href="index.html" class="text-[10px] tracking-widest mb-1">GO_BACK</a>
-    </div>
-
-    <div class="space-y-16 max-w-4xl">
+    <div class="w-full max-w-4xl">
         
-        <section>
-            <p class="text-[10px] faded mb-4">// ENTRY_01: MISSION_STATEMENT</p>
-            <p class="text-sm leading-relaxed text-white opacity-80 max-w-2xl">
-                Transitioning 15 years of hardware logic into full-stack software architecture. Building secure asset vaults and high-fidelity audio blueprints under the Aethelgard protocol.
-            </p>
-        </section>
-
-        <section>
-            <p class="text-[10px] faded mb-4">// ENTRY_02: OPERATIONAL_NODES</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-[11px]">
-                <div>
-                    <p class="mb-1 text-white">[ SOFTWARE_DEV ]</p>
-                    <p class="faded italic normal-case">Full-stack apps and terminal UIs.</p>
-                </div>
-                <div>
-                    <p class="mb-1 text-white">[ AUDIO_PROD ]</p>
-                    <p class="faded italic normal-case">Hip-hop lyrics and sonic synthesis.</p>
-                </div>
+        <div class="mb-16">
+            <p class="text-[10px] tracking-[0.5em] faded mb-4">DEDSEC_FILES // USER_001</p>
+            <div class="flex justify-between items-end header-line pb-4">
+                <h1 class="text-2xl italic font-bold tracking-widest text-white">PERSONAL_LOG_ARCHIVE</h1>
+                <p class="text-[10px] faded">STATUS: UNRESTRICTED_VIEW</p>
             </div>
-        </section>
+        </div>
 
-        <section>
-            <p class="text-[10px] faded mb-4">// ENTRY_03: ACTIVE_ASSETS</p>
-            <ul class="text-[11px] space-y-2">
-                <li>> LIFETIME_ACCESS_VAULT: [ ONLINE ]</li>
-                <li>> PROJECT: "KIND LIKE A GHOST": [ ACTIVE ]</li>
-                <li>> PROJECT: "VAMPIRE_NODES": [ ARCHIVED ]</li>
-            </ul>
-        </section>
+        <div class="space-y-16">
+            
+            <section class="border-l border-blue-900 pl-6">
+                <p class="text-[10px] tracking-[0.4em] faded mb-4">// ENTRY_01: STATUS_UPDATE</p>
+                <p class="text-sm log-text">
+                    Executing a full pivot into digital systems. Transitioning 15 years of mechanical logic into software architecture, high-fidelity music production, and independent asset vaulting.
+                </p>
+            </section>
 
-    </div>
+            <section class="border-l border-blue-900 pl-6">
+                <p class="text-[10px] tracking-[0.4em] faded mb-4">// ENTRY_02: SKILL_NODES</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-[11px]">
+                    <div>
+                        <p class="text-white mb-1">[ SOFTWARE_DEV ]</p>
+                        <p class="faded italic normal-case">Full-stack coding and terminal UI design.</p>
+                    </div>
+                    <div>
+                        <p class="text-white mb-1">[ AUDIO_PROD ]</p>
+                        <p class="faded italic normal-case">Lyrical engineering and hip-hop synthesis.</p>
+                    </div>
+                    <div>
+                        <p class="text-white mb-1">[ VISUAL_ASSETS ]</p>
+                        <p class="faded italic normal-case">Vampire-themed VFX and digital worldbuilding.</p>
+                    </div>
+                </div>
+            </section>
 
-    <div class="grid grid-cols-4 gap-4 mt-32 opacity-30">
-        <div class="h-[1px] bg-[#3449ff]"></div>
-        <div class="h-[1px] bg-[#3449ff]"></div>
-        <div class="h-[1px] bg-[#3449ff]"></div>
-        <div class="h-[1px] bg-[#3449ff]"></div>
+            <section class="border-l border-blue-900 pl-6">
+                <p class="text-[10px] tracking-[0.4em] faded mb-4">// ENTRY_03: ACTIVE_PROJECTS</p>
+                <ul class="text-[11px] space-y-3">
+                    <li class="flex items-center gap-3">
+                        <span class="w-1.5 h-1.5 bg-[#3449ff]"></span>
+                        <span>LIFETIME_VAULT // ASSET_DISTRIBUTION</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="w-1.5 h-1.5 bg-[#3449ff]"></span>
+                        <span>TRACK_ID: "KIND LIKE A GHOST"</span>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="mt-32 mb-10 flex gap-10 text-[10px] tracking-[0.3em]">
+            <a href="index.html">GO_HOME</a>
+            <span class="faded">/</span>
+            <span class="text-white">DEDSEC_ACTIVE</span>
+        </div>
+
+        <div class="grid grid-cols-4 gap-4 mt-12 opacity-40">
+            <div class="grid-line"></div>
+            <div class="grid-line"></div>
+            <div class="grid-line"></div>
+            <div class="grid-line"></div>
+        </div>
+
     </div>
 
 </body>
