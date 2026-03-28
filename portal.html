@@ -6,16 +6,21 @@
     <title>AETHELGARD // GATEKEEPER</title>
     <style>
         body { background-color: #050505; color: #00ff88; font-family: 'Courier New', monospace; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
-        .terminal-box { border: 1px solid #1a1a1a; padding: 40px; background: #080808; text-align: center; width: 350px; }
+        .terminal-box { border: 1px solid #1a1a1a; padding: 40px; background: #080808; text-align: center; width: 350px; box-shadow: 0 0 30px rgba(0, 255, 136, 0.05); }
         .terminal-input { background: transparent; border: none; border-bottom: 1px solid #333; color: #00ff88; outline: none; width: 100%; font-size: 1.2rem; text-transform: uppercase; text-align: center; padding: 10px 0; font-family: inherit; }
-        #success-msg { display: none; color: #00ff88; margin-top: 20px; font-size: 0.8rem; letter-spacing: 2px; }
+        #success-msg { display: none; color: #00ff88; margin-top: 20px; font-size: 0.8rem; letter-spacing: 2px; line-height: 1.5; }
     </style>
 </head>
 <body>
     <div class="terminal-box">
         <h1 style="color: #fff; font-size: 0.9rem; letter-spacing: 4px; margin-bottom: 25px;">ACCESS_RESTRICTED</h1>
-        <input type="text" id="passInput" placeholder="ENTER_CODE" class="terminal-input" autocomplete="off">
-        <div id="success-msg">[ ACCESS_GRANTED ]<br>REDIRECTING_TO_VAULT...</div>
+        <input type="text" id="passInput" placeholder="ENTER_CODE" class="terminal-input" autocomplete="off" autofocus>
+        
+        <div id="success-msg">
+            [ ACCESS_GRANTED ]<br>
+            DECRYPTING VAULT...<br>
+            REDIRECTING_NOW
+        </div>
     </div>
 
     <script>
@@ -26,9 +31,10 @@
             if (e.target.value.toUpperCase() === 'AETHELGARD') {
                 input.style.display = 'none';
                 msg.style.display = 'block';
-                // This sends you to the 4th page
+                
+                // IMPORTANT: This must match the name of your 4th file on GitHub
                 setTimeout(() => {
-                    window.location.href = "vault.html";
+                    window.location.href = "vault.html"; 
                 }, 1500);
             }
         });
