@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aethelgard Elite Portal</title>
+    <title>AETHELGARD // ELITE PORTAL</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,46 +13,59 @@
             theme: {
                 extend: {
                     colors: {
-                        gatekeeper: { 300: '#8da6ff', 500: '#3449ff', 600: '#1e26ff' },
+                        gatekeeper: {
+                            50: '#f0f4ff', 100: '#d9e2ff', 200: '#bbcbff', 300: '#8da6ff',
+                            400: '#5876ff', 500: '#3449ff', 600: '#1e26ff', 700: '#1418ff',
+                            800: '#1215cc', 900: '#1619a0', 950: '#0a0b5e',
+                        },
+                        ethereal: '#0a0a0c',
                     },
-                    fontFamily: { display: ['Outfit', 'sans-serif'], body: ['Space+Grotesk', 'sans-serif'] }
+                    fontFamily: {
+                        display: ['Outfit', 'sans-serif'],
+                        body: ['Space+Grotesk', 'sans-serif'],
+                    }
                 }
             }
         }
     </script>
     <style>
-        body { background-color: #0a0a0c; color: #ffffff; scroll-behavior: smooth; }
-        .mesh-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; opacity: 0; transition: opacity 2s ease; }
-        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        body { background-color: #0a0a0c; color: #ffffff; margin: 0; overflow-x: hidden; }
+        
+        /* THE LOCK SCREEN STYLES */
+        #gatekeeper-gate {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #050505; display: flex; align-items: center; justify-content: center;
+            z-index: 9999; transition: opacity 0.8s ease, visibility 0.8s;
+        }
+        .terminal-box {
+            border: 1px solid #1a1a1a; padding: 40px; background: #080808;
+            box-shadow: 0 0 50px rgba(0, 255, 136, 0.05); text-align: center; width: 90%; max-width: 400px;
+        }
+        .terminal-input {
+            background: transparent; border: none; border-bottom: 1px solid #333;
+            color: #00ff88; outline: none; font-family: 'Courier New', monospace;
+            width: 100%; font-size: 1.2rem; text-transform: uppercase; text-align: center; padding: 10px 0;
+        }
+
+        /* THE MAIN SITE STYLES (From your file) */
+        #main-site-content { display: none; opacity: 0; transition: opacity 1.5s ease; }
+        .mesh-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; }
         .scroll-reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
         .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
-        
-        /* Locking Logic */
-        #unlockedContent { display: none; opacity: 0; transition: opacity 1.5s ease; }
-        #gatekeeperGate { transition: opacity 0.8s ease; }
     </style>
 </head>
 <body class="font-body">
 
-    <div class="mesh-bg"></div>
-
-    <div id="gatekeeperGate" class="min-h-screen flex items-center justify-center p-6">
-        <div class="max-w-md w-full glass-card p-10 rounded-3xl text-center border-gatekeeper-500/20">
-            <h1 class="font-display font-black text-2xl tracking-widest mb-8 uppercase">Access Restricted</h1>
-            <input type="text" id="passInput" placeholder="ENTER_OVERRIDE..." class="bg-transparent border-b border-white/10 outline-none text-center text-xl w-full text-white uppercase tracking-[0.3em] pb-2 focus:border-gatekeeper-500 transition-all">
+    <div id="gatekeeper-gate">
+        <div class="terminal-box">
+            <h1 style="color: #fff; font-family: 'Courier New', monospace; letter-spacing: 5px; font-size: 1rem; margin-bottom: 20px;">ACCESS_RESTRICTED</h1>
+            <input type="text" id="passInput" placeholder="ENTER_CODE" class="terminal-input" autocomplete="off">
         </div>
     </div>
 
-    <div id="unlockedContent">
+    <div id="main-site-content">
+        <div class="mesh-bg"></div>
+        
         <nav class="fixed top-0 w-full z-50 px-6 py-8 flex justify-between items-center backdrop-blur-sm border-b border-white/5">
-            <a href="index.html" class="font-display font-black text-xl tracking-tighter">AETHELGARD</a>
-            <a href="bio.html" class="px-5 py-2 glass-card rounded-full text-[10px] uppercase tracking-[0.2em] hover:bg-white/10 transition-all">Personnel Logs</a>
-        </nav>
-
-        <main class="relative z-10 pt-32 px-6">
-            <section class="min-h-screen flex flex-col items-center justify-center text-center">
-                <div class="scroll-reveal inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8 border-gatekeeper-500/20">
-                    <span class="w-2 h-2 rounded-full bg-gatekeeper-500 animate-pulse"></span>
-                    <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-gatekeeper-300">Authorized Access Only</span>
-                </div>
-                <h1 class="scroll-reveal font-display text-7xl md:text
+            <a href="index.html" class="font-display font-black text
