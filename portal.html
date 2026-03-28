@@ -68,4 +68,78 @@
         <div class="mesh-bg"></div>
         
         <nav class="fixed top-0 w-full z-50 px-6 py-8 flex justify-between items-center backdrop-blur-sm border-b border-white/5">
-            <a href="index.html" class="font-display font-black text
+            <a href="index.html" class="font-display font-black text-xl tracking-tighter hover:text-gatekeeper-300 transition-colors">AETHELGARD</a>
+            <div class="flex gap-6 items-center">
+                <a href="bio.html" class="text-xs uppercase tracking-widest text-zinc-400 hover:text-white transition-colors font-medium">Personnel Logs</a>
+            </div>
+        </nav>
+
+        <main class="relative z-10">
+            <section class="min-h-screen flex flex-col items-center justify-center pt-32 px-6">
+                <div class="scroll-reveal text-center max-w-4xl">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8 border-gatekeeper-500/20">
+                        <span class="w-2 h-2 rounded-full bg-gatekeeper-500 animate-pulse"></span>
+                        <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-gatekeeper-300">Authorization Level: Elite</span>
+                    </div>
+                    <h1 class="font-display text-7xl md:text-9xl font-black mb-8 leading-[0.85] tracking-tighter">
+                        <span class="text-white">ELITE</span><br/>
+                        <span class="text-blue-600">PORTAL</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed font-light">
+                        Independent infrastructure node. Secure audio distribution and private project blueprints finalized.
+                    </p>
+                </div>
+            </section>
+
+            <section class="py-32 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="scroll-reveal glass-card p-12 h-80 flex flex-col justify-end group cursor-pointer hover:bg-white/[0.05] transition-all">
+                    <h3 class="font-display text-3xl font-bold mb-4">OWNED</h3>
+                    <p class="text-zinc-500 text-sm leading-relaxed">100% control over distribution nodes and audio masters.</p>
+                </div>
+                <div class="scroll-reveal glass-card p-12 h-80 flex flex-col justify-end group cursor-pointer hover:bg-white/[0.05] transition-all" style="transition-delay: 100ms;">
+                    <h3 class="font-display text-3xl font-bold mb-4">INDEPENDENT</h3>
+                    <p class="text-zinc-500 text-sm leading-relaxed">Built from the ground up. Zero third-party dependencies.</p>
+                </div>
+                <div class="scroll-reveal glass-card p-12 h-80 flex flex-col justify-end group cursor-pointer hover:bg-white/[0.05] transition-all" style="transition-delay: 200ms;">
+                    <h3 class="font-display text-3xl font-bold mb-4">SECURE</h3>
+                    <p class="text-zinc-500 text-sm leading-relaxed">Encrypted asset vaults and satellite uplink confirmation.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // PASSWORD LOGIC
+        const input = document.getElementById('passInput');
+        const gate = document.getElementById('gatekeeper-gate');
+        const content = document.getElementById('main-site-content');
+
+        input.addEventListener('input', (e) => {
+            if (e.target.value.toUpperCase() === 'AETHELGARD') {
+                gate.style.opacity = '0';
+                setTimeout(() => {
+                    gate.style.display = 'none';
+                    content.style.display = 'block';
+                    setTimeout(() => { content.style.opacity = '1'; }, 50);
+                }, 800);
+            }
+        });
+
+        // SCROLL REVEAL LOGIC
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+        // MOUSE GLOW LOGIC
+        document.addEventListener('mousemove', (e) => {
+            const mesh = document.querySelector('.mesh-bg');
+            if (mesh) {
+                const x = (e.clientX / window.innerWidth) * 100;
+                const y = (e.clientY / window.innerHeight) * 100;
+                mesh.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(52, 73, 255, 0.15) 0%, transparent 40%)`;
+            }
+        });
+    </script>
+</body>
+</html>
