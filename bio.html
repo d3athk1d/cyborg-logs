@@ -1,30 +1,38 @@
-<div class="mb-10 text-left">
-    <div class="flex items-center gap-6 mb-8">
-        <div class="w-20 h-20 bg-blue-600 rounded-2xl flex items-center justify-center synco text-2xl font-bold italic shadow-[0_0_30px_rgba(52,73,255,0.4)]">
-            A
-        </div>
-        <div>
-            <h1 class="synco text-xl tracking-widest uppercase mb-1">Aethelgard</h1>
-            <p class="text-[10px] text-blue-500 tracking-[0.3em] uppercase italic">Mechanical & Digital Architect</p>
-        </div>
-    </div>
-
-    <div class="glass p-6 rounded-2xl space-y-6">
-        <div>
-            <p class="text-[9px] text-white/40 uppercase tracking-[0.4em] mb-2">// Background</p>
-            <p class="text-sm text-white/80 font-light leading-relaxed">
-                Formally at Prestige Collision. Now pivoting 15 years of mechanical expertise into full-stack digital worldbuilding.
-            </p>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AETHELGARD // ARCHITECT PROFILE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #050505; color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        .synco { font-family: 'Syncopate', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .glow-border { border: 1px solid rgba(52, 73, 255, 0.3); box-shadow: 0 0 20px rgba(52, 73, 255, 0.1); }
+        .accent-gradient { background: linear-gradient(135deg, #3449ff 0%, #1e26ff 100%); }
         
-        <div>
-            <p class="text-[9px] text-white/40 uppercase tracking-[0.4em] mb-2">// Skill Nodes</p>
-            <div class="grid grid-cols-2 gap-2">
-                <div class="text-[10px] bg-white/5 p-2 rounded border border-white/10 uppercase tracking-widest text-center">Engine Logic</div>
-                <div class="text-[10px] bg-white/5 p-2 rounded border border-white/10 uppercase tracking-widest text-center">App Dev</div>
-                <div class="text-[10px] bg-white/5 p-2 rounded border border-white/10 uppercase tracking-widest text-center">Music Prod</div>
-                <div class="text-[10px] bg-white/5 p-2 rounded border border-white/10 uppercase tracking-widest text-center">VFX Nodes</div>
-            </div>
-        </div>
-    </div>
-</div>
+        /* Subtle scanline effect */
+        body::before {
+            content: " "; display: block; position: fixed; top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 118, 0.02));
+            z-index: 100; background-size: 100% 4px, 3px 100%; pointer-events: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 md:p-8">
+
+    <div class="w-full max-w-lg">
+        
+        <div class="relative mb-10 group">
+            <div class="flex items-center gap-6">
+                <div class="w-24 h-24 accent-gradient rounded-3xl flex items-center justify-center synco text-3xl font-bold italic shadow-[0_0_40px_rgba(52,73,255,0.3)] group-hover:scale-105 transition-transform duration-500">
+                    A
+                </div>
+                <div>
+                    <h1 class="synco text-2xl tracking-tighter uppercase mb-1">Aethelgard</h1>
+                    <p class="text-[10px] text-blue-500 tracking-[0.4em] uppercase font-bold italic">Lead Architect // Node 001</p>
+                    <div class="flex gap-2 mt-3">
+                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                        <span class
