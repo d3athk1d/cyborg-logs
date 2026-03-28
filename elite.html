@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aethelgard // Elite Portal</title>
+    <title>Aethelgard Elite Portal</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,78 +13,50 @@
             theme: {
                 extend: {
                     colors: {
-                        gatekeeper: { 500: '#3449ff', 600: '#1e26ff' },
+                        gatekeeper: {
+                            50: '#f0f4ff', 100: '#d9e2ff', 200: '#bbcbff', 300: '#8da6ff',
+                            400: '#5876ff', 500: '#3449ff', 600: '#1e26ff', 700: '#1418ff',
+                            800: '#1215cc', 900: '#1619a0', 950: '#0a0b5e',
+                        },
                         ethereal: '#0a0a0c',
                     },
                     fontFamily: {
                         display: ['Outfit', 'sans-serif'],
                         body: ['Space+Grotesk', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 3s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        glow: {
+                            '0%': { 'box-shadow': '0 0 20px rgba(52, 73, 255, 0.2)' },
+                            '100%': { 'box-shadow': '0 0 50px rgba(52, 73, 255, 0.6)' },
+                        }
                     }
                 }
             }
         }
     </script>
     <style>
-        body { background-color: #000; color: #ffffff; margin: 0; overflow-x: hidden; }
+        body { background-color: #0a0a0c; color: #ffffff; overflow-x: hidden; }
+        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; }
+        .gradient-text { background: linear-gradient(135deg, #ffffff 0%, #8da6ff 50%, #3449ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .mesh-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
         
-        /* Video Background Container */
-        .video-container {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -2; overflow: hidden; background: #000;
-        }
-        .video-container iframe, .video-container video {
-            width: 100vw; height: 100vh; object-fit: cover;
-            position: absolute; top: 50%; left: 50%;
-            transform: translate(-50%, -50%); opacity: 0.6;
-        }
-
-        /* The Interactive Bubble Layer (Overlaying the video) */
-        .mesh-bg { 
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; 
-            background: radial-gradient(circle at 50% 50%, rgba(52, 73, 255, 0.15) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .glass-card { 
-            background: rgba(0, 0, 0, 0.4); 
-            backdrop-filter: blur(12px); 
-            border: 1px solid rgba(255, 255, 255, 0.1); 
-            border-radius: 24px; 
-            transition: all 0.5s ease;
-        }
-
-        .glass-card:hover { border-color: rgba(52, 73, 255, 0.4); background: rgba(0, 0, 0, 0.6); }
-        
-        /* Animation Logic */
-        .scroll-reveal { opacity: 0; transform: translateY(30px); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
-        .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
-
-        .gradient-text {
-            background: linear-gradient(135deg, #ffffff 0%, #8da6ff 50%, #3449ff 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        /* Fixed visibility: forced reveal */
+        .scroll-reveal { opacity: 1; transform: translateY(0); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
+        @media (min-width: 768px) {
+            .scroll-reveal { opacity: 0; transform: translateY(30px); }
+            .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
-<body class="font-body">
+<body class="font-body selection:bg-gatekeeper-500/30 selection:text-white">
 
-    <div class="video-container">
-        <video autoplay muted loop playsinline src="YOUR_VIDEO_FILE_URL_HERE"></video>
-    </div>
-
-    <div class="mesh-bg" id="bg-glow"></div>
-    
-    <nav class="fixed top-0 w-full z-50 px-6 py-8 flex justify-between items-center backdrop-blur-sm border-b border-white/5">
-        <a href="index.html" class="font-display font-black text-xl tracking-tighter uppercase">AETHELGARD</a>
-        <a href="bio.html" class="text-[10px] uppercase tracking-widest text-zinc-400 font-bold hover:text-white transition-colors">Personnel Logs</a>
-    </nav>
-
-    <main class="relative z-10">
-        <section class="min-h-screen flex flex-col items-center justify-center pt-32 px-6">
-            <div class="scroll-reveal text-center max-w-4xl">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8 border-gatekeeper-500/20">
-                    <span class="w-2 h-2 rounded-full bg-gatekeeper-500 animate-pulse"></span>
-                    <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-gatekeeper-300">Vault Access Granted</span>
-                </div>
-                <h1 class="font-display text-7xl md:text-9xl font-black mb-8 leading-[0.85] tracking-tighter uppercase">
-                    Elite<br><span class="gradient-text">Infrastructure</span>
-                </h1>
+    <div class="mesh-
