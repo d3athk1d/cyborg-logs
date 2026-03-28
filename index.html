@@ -3,27 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AETHELGARD // HUB</title>
+    <title>Aethelgard Elite Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gatekeeper: {
+                            50: '#f0f4ff', 100: '#d9e2ff', 200: '#bbcbff', 300: '#8da6ff',
+                            400: '#5876ff', 500: '#3449ff', 600: '#1e26ff', 700: '#1418ff',
+                            800: '#1215cc', 900: '#1619a0', 950: '#0a0b5e',
+                        },
+                        ethereal: '#0a0a0c',
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'sans-serif'],
+                        body: ['Space+Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        body { background-color: #050505; color: #fff; font-family: 'Courier New', monospace; margin: 0; padding: 0; display: flex; align-items: center; justify-content: center; height: 100vh; text-align: center; }
-        .glitch-title { font-size: 3rem; letter-spacing: 15px; color: #00ff88; text-transform: uppercase; margin-bottom: 50px; }
-        .nav-container { display: flex; gap: 25px; justify-content: center; flex-wrap: wrap; }
-        .btn { text-decoration: none; border: 1px solid #00ff88; padding: 20px 40px; color: #00ff88; font-size: 0.8rem; letter-spacing: 4px; transition: 0.4s; text-transform: uppercase; min-width: 200px; }
-        .btn:hover { background: #00ff88; color: #000; box-shadow: 0 0 30px rgba(0, 255, 136, 0.4); }
-        .btn-white { border-color: #fff; color: #fff; }
-        .btn-white:hover { background: #fff; color: #000; box-shadow: 0 0 30px rgba(255, 255, 255, 0.4); }
-        .status-bar { margin-top: 40px; color: #222; font-size: 0.6rem; letter-spacing: 5px; text-transform: uppercase; }
+        body { background-color: #0a0a0c; color: #ffffff; overflow-x: hidden; }
+        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; }
+        .gradient-text { background: linear-gradient(135deg, #ffffff 0%, #8da6ff 50%, #3449ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .mesh-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: radial-gradient(circle at 20% 30%, rgba(52, 73, 255, 0.15) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(20, 24, 255, 0.1) 0%, transparent 40%); }
+        .video-container { position: relative; border-radius: 24px; overflow: hidden; box-shadow: 0 0 40px rgba(52, 73, 255, 0.3); transform: perspective(1000px) rotateX(2deg); transition: transform 0.5s ease; }
+        .video-container:hover { transform: perspective(1000px) rotateX(0deg) scale(1.02); }
+        .scroll-reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
     </style>
 </head>
-<body>
-    <div>
-        <h1 class="glitch-title">AETHELGARD</h1>
-        <div class="nav-container">
-            <a href="bio.html" class="btn">ACCESS_LOGS</a>
-            
-            <a href="portal.html" class="btn btn-white">ELITE_PORTAL</a>
-        </div>
-        <div class="status-bar">SYSTEM_STATUS: ONLINE // ENCRYPTION: ACTIVE</div>
-    </div>
+<body class="font-body selection:bg-gatekeeper-500 selection:text-white">
+    <div class="mesh-bg"></div>
+    <main class="min-h-screen flex flex-col items-center justify-center p-6 md:p-12 max-w-7xl mx-auto">
+        <header class="text-center mb-12 md:mb-20 scroll-reveal">
+            <div class="inline-block px-4 py-1.5 mb-6 rounded-full border border-gatekeeper-500/30 bg-gatekeeper-500/10 text-gatekeeper-300 text-sm font-medium tracking-widest uppercase">The Future of Worldbuilding</div>
+            <h1 class="font-display text-5xl md:text-8xl font-black mb-8 leading-[1.1] tracking-tight">
+                <span class="gradient-text">Aethelgard</span><br/><span class="text-white">Elite Portal</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg md:text-xl text-zinc-400 font-light leading-relaxed">Elevate your creative power. Train your AI to build legendary worlds with unmatched precision and depth.</p>
+        </header>
+        <section class="w-full max-w-5xl mb-24 scroll-reveal">
+            <div class="video-container group">
+                <div class="absolute inset-0 bg-gradient-to-t from-ethereal via-transparent to-transparent opacity-60 z-10 pointer-events-none"></div>
+                <video src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-blue-and-white-particles-23131-large.mp4" autoplay muted loop playsinline></video>
+            </div>
+        </section>
+        <a href="portal.html" class="px-10 py-5 bg-gatekeeper-600 hover:bg-gatekeeper-500 text-white rounded-full font-bold transition-all flex items-center gap-3 group">
+            <span class="uppercase tracking-widest text-sm">Access Secure Gateway</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+        </a>
+    </main>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
