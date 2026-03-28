@@ -2,77 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>AETHELGARD // ENCRYPTION</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEDSEC // AETHELGARD</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { background: #000; color: #3449ff; font-family: monospace; overflow: hidden; }
-        .glitch { animation: glitch 1s linear infinite; }
-        @keyframes glitch {
-            0% { transform: translate(0); }
-            20% { transform: translate(-2px, 2px); }
-            40% { transform: translate(-2px, -2px); }
-            60% { transform: translate(2px, 2px); }
-            80% { transform: translate(2px, -2px); }
-            100% { transform: translate(0); }
-        }
-        input { 
-            background: transparent; border: none; color: #fff; 
-            font-size: 2rem; letter-spacing: 0.5em; text-align: center;
-            width: 100%; outline: none; text-transform: uppercase;
-        }
+        body { background: #000; color: #3449ff; font-family: monospace; overflow-x: hidden; }
+        .glitch-text:hover { color: #fff; text-shadow: 0 0 10px #3449ff; cursor: pointer; }
+        video { opacity: 0.4; filter: grayscale(100%) contrast(120%); }
     </style>
 </head>
-<body class="h-screen flex items-center justify-center p-12">
+<body class="h-screen flex flex-col items-center justify-center p-6">
 
-    <div class="max-w-2xl w-full">
-        <div class="mb-12 flex justify-between items-end border-b border-blue-900/50 pb-4">
-            <div>
-                <p class="text-[10px] tracking-[0.5em] opacity-40 uppercase mb-2">Security_Protocol</p>
-                <h2 class="text-xl tracking-widest uppercase italic">Verification_Required</h2>
-            </div>
-            <div class="text-right">
-                <p id="timer" class="text-xs font-mono opacity-40">SESSION_EXPIRES: 04:59</p>
-            </div>
+    <div class="text-center z-10">
+        <p class="text-[10px] tracking-[0.5em] mb-4 opacity-40">DEDSEC_SYSTEM_ACTIVE</p>
+        <h1 class="text-4xl md:text-6xl font-bold italic tracking-tighter mb-8 text-white">AETHELGARD</h1>
+        
+        <div class="mb-12 max-w-xl mx-auto border-l border-blue-600 pl-6 text-left">
+            <p class="text-xs leading-loose tracking-widest uppercase">
+                Digital infrastructure node. <br>
+                Executing pivot: Software // Audio // Visual.
+            </p>
         </div>
 
-        <div class="py-20 relative">
-            <input type="password" id="passkey" placeholder="••••••••" autofocus>
-            <div id="status" class="mt-8 text-center text-[10px] tracking-[0.8em] opacity-30 uppercase">
-                Awaiting Authorization Key
-            </div>
-        </div>
-
-        <div class="grid grid-cols-4 gap-4 opacity-10">
-            <div class="h-1 bg-blue-500"></div>
-            <div class="h-1 bg-blue-500"></div>
-            <div class="h-1 bg-blue-500"></div>
-            <div class="h-1 bg-blue-500"></div>
-        </div>
+        <a href="bio.html" class="inline-block border border-blue-600 px-10 py-4 text-xs tracking-[0.4em] glitch-text transition-all uppercase">
+            Access_User_Log
+        </a>
     </div>
 
-    <script>
-        const passkey = document.getElementById('passkey');
-        const status = document.getElementById('status');
+    <div class="fixed inset-0 -z-10 overflow-hidden">
+        <video src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-blue-and-white-particles-23131-large.mp4" autoplay muted loop playsinline class="w-full h-full object-cover"></video>
+    </div>
 
-        passkey.addEventListener('input', (e) => {
-            if (e.target.value.toUpperCase() === 'AETHELGARD') {
-                status.innerText = "ACCESS GRANTED // REDIRECTING";
-                status.classList.add('text-white', 'opacity-100', 'glitch');
-                passkey.style.color = '#3449ff';
-                setTimeout(() => {
-                    // Change this to your new destination page later
-                    alert('Identity Confirmed.');
-                }, 1000);
-            }
-        });
-
-        // Simple visual countdown
-        let mins = 4, secs = 59;
-        setInterval(() => {
-            if (secs > 0) secs--;
-            else { mins--; secs = 59; }
-            document.getElementById('timer').innerText = `SESSION_EXPIRES: 0${mins}:${secs < 10 ? '0'+secs : secs}`;
-        }, 1000);
-    </script>
 </body>
 </html>
