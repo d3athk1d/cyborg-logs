@@ -5,36 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aethelgard // Secure Vault</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        gatekeeper: {
-                            50: '#f0f4ff', 100: '#d9e2ff', 200: '#bbcbff', 300: '#8da6ff',
-                            400: '#5876ff', 500: '#3449ff', 600: '#1e26ff', 700: '#1418ff',
-                            800: '#1215cc', 900: '#1619a0', 950: '#0a0b5e',
-                        },
+                        gatekeeper: { 500: '#3449ff', 600: '#1e26ff' },
                         ethereal: '#0a0a0c',
                     },
-                    fontFamily: {
-                        display: ['Outfit', 'sans-serif'],
-                        body: ['Space+Grotesk', 'sans-serif'],
-                    }
+                    fontFamily: { display: ['Outfit', 'sans-serif'], body: ['Space+Grotesk', 'sans-serif'] }
                 }
             }
         }
     </script>
     <style>
-        body { background-color: #0a0a0c; color: #ffffff; scroll-behavior: smooth; overflow-x: hidden; }
+        body { background-color: #0a0a0c; color: #ffffff; margin: 0; overflow-x: hidden; }
         
-        /* The Mesh Background */
+        /* Interactive Background */
         .mesh-bg { 
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; 
-            background: radial-gradient(circle at 50% 50%, rgba(52, 73, 255, 0.1) 0%, transparent 50%);
+            background: radial-gradient(circle at 50% 50%, rgba(52, 73, 255, 0.15) 0%, transparent 50%);
         }
 
         .glass-card { 
@@ -44,28 +35,28 @@
             border-radius: 24px; 
         }
 
-        /* Fixed the Black Screen Issue: Items are visible by default, then animate in */
+        /* FIXED: Changed initial opacity to 1 so the page isn't black if JS fails */
         .scroll-reveal { 
             opacity: 1; 
             transform: translateY(0); 
             transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); 
         }
-        
+
+        /* Only hide them initially if the user has a modern browser and screen */
         @media (min-width: 768px) {
-            .scroll-reveal { opacity: 0; transform: translateY(30px); }
-            .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
+            .js-enabled .scroll-reveal { opacity: 0; transform: translateY(30px); }
+            .js-enabled .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
-<body class="font-body">
+<body class="font-body js-enabled">
 
     <div class="mesh-bg"></div>
     
     <nav class="fixed top-0 w-full z-50 px-6 py-8 flex justify-between items-center backdrop-blur-sm border-b border-white/5">
-        <a href="index.html" class="font-display font-black text-xl tracking-tighter hover:text-gatekeeper-300 transition-colors">AETHELGARD</a>
+        <a href="index.html" class="font-display font-black text-xl tracking-tighter uppercase">Aethelgard</a>
         <div class="flex gap-6 items-center">
-            <a href="bio.html" class="text-xs uppercase tracking-widest text-zinc-400 hover:text-white transition-colors font-medium">Personnel Logs</a>
-            <a href="portal.html" class="px-5 py-2 glass-card rounded-full text-[10px] uppercase tracking-[0.2em] hover:bg-white/10 transition-all font-bold">Lock Terminal</a>
+            <a href="bio.html" class="text-[10px] uppercase tracking-widest text-zinc-400 font-bold">Personnel Logs</a>
         </div>
     </nav>
 
@@ -79,15 +70,30 @@
                 <h1 class="font-display text-7xl md:text-9xl font-black mb-8 leading-[0.85] tracking-tighter uppercase">
                     Elite<br><span class="text-gatekeeper-500">Infrastructure</span>
                 </h1>
-                <p class="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed font-light">
+                <p class="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto font-light">
                     Independent infrastructure node. Secure audio distribution and private project blueprints finalized.
                 </p>
             </div>
         </section>
 
         <section class="py-32 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="scroll-reveal glass-card p-12 h-80 flex flex-col justify-end hover:bg-white/[0.05] transition-all">
+            <div class="scroll-reveal glass-card p-12 h-80 flex flex-col justify-end">
                 <h3 class="font-display text-3xl font-bold mb-4 uppercase">Owned</h3>
                 <p class="text-zinc-500 text-sm leading-relaxed">100% control over distribution nodes and audio masters.</p>
             </div>
-            <div class="scroll-reveal glass-card p
+            <div class="scroll-reveal glass-card p-12 h-80 flex flex-col justify-end" style="transition-delay: 100ms;">
+                <h3 class="font-display text-3xl font-bold mb-4 uppercase">Independent</h3>
+                <p class="text-zinc-500 text-sm leading-relaxed">Built from the ground up. Zero third-party dependencies.</p>
+            </div>
+            <div class="scroll-reveal glass-card p-12 h-80 flex flex-col justify-end" style="transition-delay: 200ms;">
+                <h3 class="font-display text-3xl font-bold mb-4 uppercase">Secure</h3>
+                <p class="text-zinc-500 text-sm leading-relaxed">Encrypted asset vaults and satellite uplink confirmation.</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Force reveal everything on load
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                document.querySelectorAll('.scroll-reveal').forEach(el => {
