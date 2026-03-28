@@ -2,40 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AETHELGARD // GATEKEEPER</title>
+    <title>AETHELGARD // GATEWAY</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { background-color: #050505; color: #00ff88; font-family: 'Courier New', monospace; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
-        .terminal-box { border: 1px solid #1a1a1a; padding: 40px; background: #080808; text-align: center; width: 350px; box-shadow: 0 0 30px rgba(0, 255, 136, 0.05); }
-        .terminal-input { background: transparent; border: none; border-bottom: 1px solid #333; color: #00ff88; outline: none; width: 100%; font-size: 1.2rem; text-transform: uppercase; text-align: center; padding: 10px 0; font-family: inherit; }
-        #success-msg { display: none; color: #00ff88; margin-top: 20px; font-size: 0.8rem; letter-spacing: 2px; line-height: 1.5; }
+        body { background: #000; color: #00ff00; font-family: monospace; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        input { background: transparent; border: 1px solid #00ff00; color: #00ff00; padding: 10px; text-align: center; outline: none; width: 300px; font-size: 1.2rem; letter-spacing: 4px; }
     </style>
 </head>
 <body>
-    <div class="terminal-box">
-        <h1 style="color: #fff; font-size: 0.9rem; letter-spacing: 4px; margin-bottom: 25px;">ACCESS_RESTRICTED</h1>
-        <input type="text" id="passInput" placeholder="ENTER_CODE" class="terminal-input" autocomplete="off" autofocus>
-        
-        <div id="success-msg">
-            [ ACCESS_GRANTED ]<br>
-            DECRYPTING VAULT...<br>
-            REDIRECTING_NOW
-        </div>
+    <div class="text-center">
+        <div class="mb-4 opacity-50 text-xs">ENTER_ENCRYPTION_KEY</div>
+        <input type="password" id="key" maxlength="10" autocomplete="off" autofocus>
+        <div id="status" class="mt-4 text-[10px] uppercase tracking-widest">Awaiting_Input...</div>
     </div>
 
     <script>
-        const input = document.getElementById('passInput');
-        const msg = document.getElementById('success-msg');
+        const input = document.getElementById('key');
+        const status = document.getElementById('status');
 
         input.addEventListener('input', (e) => {
             if (e.target.value.toUpperCase() === 'AETHELGARD') {
-                input.style.display = 'none';
-                msg.style.display = 'block';
-                
-                // IMPORTANT: This must match the name of your 4th file on GitHub
+                status.innerText = "ACCESS_GRANTED... REDIRECTING";
+                input.style.borderColor = "#fff";
+                input.style.color = "#fff";
                 setTimeout(() => {
-                    window.location.href = "vault.html"; 
-                }, 1500);
+                    // This sends you to the NEW page you just made
+                    window.location.href = "elite.html"; 
+                }, 1000);
             }
         });
     </script>
